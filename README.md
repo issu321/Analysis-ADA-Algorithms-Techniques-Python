@@ -1,315 +1,100 @@
-# 🚀 USSU Algorithm Analyzer v5.0
+# USSU Algorithm Analyzer v4.0
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=300&color=0:0f172a,50:06b6d4,100:7c3aed&text=USSU%20ALGORITHM%20ANALYZER&fontColor=ffffff&fontSize=48&fontAlignY=38&animation=fadeIn&desc=Next-Generation%20Algorithm%20Visualization%20Suite&descAlignY=58&descSize=20" />
-</p>
+**Fully Automated Multi-Site Algorithm Analysis Platform**
 
-<div align="center">
-
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Orbitron&size=24&duration=3000&pause=1000&color=06B6D4&center=true&vCenter=true&width=900&lines=Advanced+Algorithm+Analysis+Platform;Cyberpunk+Inspired+Interactive+UI;Built+for+Students+%2B+Developers+%2B+Researchers;Kali+Linux+%7C+Windows+%7C+macOS+Supported;Streamlit+Powered+Visualization+Engine)
-
-</div>
+Built by **Ussu** ([@issu321](https://github.com/issu321))  
+Original Repo: [Analysis-ADA-Algorithms-Techniques-Python](https://github.com/issu321/Analysis-ADA-Algorithms-Techniques-Python)
 
 ---
 
-<div align="center">
+## Features
 
-[![Python](https://img.shields.io/badge/Python-3.10+-06b6d4?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Latest-ff4b4b?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![Kali Linux](https://img.shields.io/badge/Kali-Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)](https://www.kali.org)
-[![Windows](https://img.shields.io/badge/Windows-11-0078D6?style=for-the-badge&logo=windows11&logoColor=white)](https://www.microsoft.com/windows)
-[![License](https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge&logo=open-source-initiative&logoColor=white)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/issu321/Analysis-ADA-Algorithms-Techniques-Python?style=for-the-badge&logo=github&color=f59e0b)](https://github.com/issu321/Analysis-ADA-Algorithms-Techniques-Python)
-
-</div>
-
----
-
-## 🌌 About The Project
-
-> **USSU Algorithm Analyzer** is a futuristic, cyberpunk-themed algorithm visualization and benchmarking platform built for learning, experimenting, and analyzing algorithms interactively.
-
-This project transforms traditional algorithm learning into a modern visual experience with:
-
-- ⚡ Interactive visualizations
-- 📊 Real-time performance benchmarking
-- 🧠 ADA (Analysis of Algorithms) concepts
-- 🌐 Beautiful Streamlit-powered UI
-- 🎨 Animated futuristic dashboard
-- 📈 Complexity analysis and metrics
-- 🔥 Kali Linux & Windows optimized execution
+- **11 Pages** - Complete multi-site architecture
+- **40+ Algorithms** across 7 categories
+- **Glassmorphism UI** with blur effects and 3D animations
+- **100% Automated** - Input → Process → Output with zero manual steps
+- **Real-time Visualizations** - Animated bars, graphs, and step tracking
+- **Performance Benchmarking** - Side-by-side comparison with winner detection
+- **Responsive Design** - Works on all devices
+- **Particle Background** - Interactive canvas animation
+- **3D Tilt Cards** - Mouse-tracking perspective effects
 
 ---
 
-# ✨ Core Features
+## Pages
 
-## 📚 Algorithms Included
-
-| Category | Algorithms Included |
-|---|---|
-| 🔎 Searching | Linear, Binary, Jump, Fibonacci, Exponential, Interpolation |
-| 🔃 Sorting | Bubble, Merge, Quick, Heap, Radix, Counting, Shell, TimSort |
-| 🌐 Graph Algorithms | BFS, DFS, Dijkstra, Floyd-Warshall, Bellman-Ford, Kruskal |
-| 🧠 Dynamic Programming | Knapsack, LIS, LCS, Coin Change, Matrix Chain |
-| 🎯 Greedy Algorithms | Huffman Coding, Activity Selection, Fractional Knapsack |
-| ♟️ Backtracking | Sudoku Solver, N-Queens, Graph Coloring |
-| 📐 Mathematical Tools | GCD, Prime Sieve, Fast Power, Matrix Operations |
-| 📖 ADA Concepts | Big-O, Master Theorem, NP-Completeness |
-
----
-
-# 🖥️ Professional UI Highlights
-
-- 🌌 Cyberpunk-themed dashboard
-- ✨ Neon glow cards and animations
-- 📊 Interactive benchmark charts
-- 🎨 Gradient visual effects
-- 🌙 Dark futuristic UI
-- ⚡ Smooth transitions and hover effects
-- 📱 Responsive layout
-- 🧠 Educational visual explanation panels
+| Page | Algorithms | Description |
+|------|-----------|-------------|
+| **Home** | Overview | Landing page with stats and navigation |
+| **Search** | 7 algorithms | Linear, Binary, Jump, Interpolation, Exponential, Ternary, Fibonacci |
+| **Sort** | 10 algorithms | Bubble, Selection, Insertion, Merge, Quick, Heap, Counting, Radix, Bucket, Shell |
+| **Graph** | 8 algorithms | BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall, Prim, Kruskal, Topological |
+| **DP** | 7 problems | Fibonacci, Knapsack, LCS, LIS, Coin Change, Matrix Chain, Edit Distance |
+| **Greedy** | 4 algorithms | Activity Selection, Fractional Knapsack, Job Sequencing, Huffman |
+| **Backtracking** | 5 problems | N-Queens, Sudoku, Rat in Maze, Subset Sum, Hamiltonian |
+| **Math** | 9 tools | GCD, LCM, Prime, Sieve, Factorial, Power, Mod Inverse, NCR, Fib |
+| **Benchmark** | All | Performance testing with visual charts |
+| **Compare** | All | 1v1 algorithm comparison |
+| **Visualize** | Sort/Search | Full-screen animated visualizations |
 
 ---
 
-# 📦 Installation Guide
+## How to Use
 
-# IMPORTANT FOR END USERS
+1. Open `index.html` in any modern browser
+2. Navigate to any algorithm category
+3. Select algorithm from dropdown
+4. Enter input data (pre-filled examples provided)
+5. Click **Run Algorithm**
+6. View automated results + step visualization
 
-## 📥 STEP 1 — Download & Extract ZIP
+---
 
-After downloading the project ZIP:
+## Tech Stack
 
-### Windows Users
-1. Right click the ZIP file
-2. Click **Extract All**
-3. Open the extracted folder
+- **HTML5** - Semantic structure
+- **CSS3** - Glassmorphism, Grid, Flexbox, Animations
+- **Vanilla JavaScript** - 40+ algorithm implementations, no dependencies
+- **Canvas API** - Particle background system
 
-### Kali Linux / Ubuntu Users
-```bash
-unzip Analysis-ADA-Algorithms-Techniques-Python-main.zip
-cd Analysis-ADA-Algorithms-Techniques-Python-main
+---
+
+## File Structure
+
+```
+ussu-algorithm-analyzer/
+├── index.html          # Home page
+├── search.html         # Search algorithms
+├── sort.html           # Sort algorithms
+├── graph.html          # Graph algorithms
+├── dp.html             # Dynamic programming
+├── greedy.html         # Greedy algorithms
+├── backtracking.html   # Backtracking problems
+├── math.html           # Math tools
+├── benchmark.html      # Performance benchmarks
+├── compare.html        # Algorithm comparison
+├── visualize.html      # Full-screen visualization
+├── css/
+│   └── style.css      # Glassmorphism + 3D design system
+├── js/
+│   ├── algorithms.js  # 40+ algorithm implementations
+│   └── main.js        # UI controller & visualization engine
+└── assets/            # Images & resources
 ```
 
 ---
 
-# 🪟 Windows Installation & Run Guide
+## Browser Support
 
-## ✅ Method 1 — Easy Start (Recommended)
-
-Open the extracted project folder and double click:
-
-```powershell
-start.bat
-```
-
-This automatically:
-- Creates virtual environment
-- Installs dependencies
-- Launches Streamlit server
-- Opens browser automatically
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
 ---
 
-## ✅ Method 2 — Manual Windows Setup
+## License
 
-### Open PowerShell inside project folder:
+MIT License - Free to use and modify.
 
-```powershell
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-
-# 🐉 Kali Linux / Ubuntu Installation Guide
-
-## ✅ Automatic Setup
-
-Open terminal inside extracted folder:
-
-```bash
-chmod +x install.sh
-chmod +x start.sh
-./install.sh
-./start.sh
-```
-
----
-
-## ✅ Manual Kali Linux Setup
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-
-# 🍎 macOS Installation
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-
-# 🌐 Open Application
-
-After successful launch:
-
-```text
-http://localhost:8501
-```
-
-Open the above URL in your browser.
-
----
-
-# 📂 Project Structure
-
-```bash
-USSU-ALGORITHM-ANALYZER/
-│
-├── app.py
-├── requirements.txt
-├── install.sh
-├── start.sh
-├── start.bat
-├── README.md
-│
-├── algorithms/
-│   ├── search.py
-│   ├── sort.py
-│   ├── graph.py
-│   ├── dp.py
-│   ├── greedy.py
-│   ├── backtracking.py
-│   └── math_tools.py
-│
-├── pages/
-│   ├── home.py
-│   ├── benchmark.py
-│   ├── visualize.py
-│   └── compare.py
-│
-├── utils/
-│   ├── core.py
-│   ├── ui.py
-│   └── charts.py
-│
-└── .streamlit/
-    └── config.toml
-```
-
----
-
-# 📊 Performance Analytics
-
-The platform provides:
-
-- ⏱️ Execution Time Tracking
-- 💾 Memory Usage Monitoring
-- 📈 Complexity Comparison
-- 🔬 Benchmark Statistics
-- ⚡ Real-Time Visualization
-- 🧠 Step-by-Step Algorithm Flow
-
----
-
-# 🛡️ Kali Linux Compatibility Fixes
-
-Special startup scripts included for:
-
-- Kali Linux PATH issues
-- Virtual environment handling
-- Streamlit command errors
-- Python execution conflicts
-- Permission management
-
----
-
-# 🚀 Future Roadmap
-
-- 🤖 AI-based algorithm recommendations
-- 🌐 Online multiplayer coding arena
-- 📱 Mobile responsive redesign
-- 🧠 Machine Learning visualizations
-- 🎮 Gamified algorithm learning
-- 🔥 GPU accelerated benchmarking
-
----
-
-# 🤝 Contribution Guide
-
-Contributions are welcome.
-
-```bash
-git fork
-create feature branch
-commit changes
-push to branch
-open pull request
-```
-
----
-
-# 🧪 Quick Test Commands
-
-```bash
-python -c "print('USSU Analyzer Ready')"
-```
-
-```bash
-streamlit run app.py
-```
-
----
-
-# 👨‍💻 Developer
-
-<div align="center">
-
-## ⚡ Mohammed Usman (USSU)
-
-### 🔗 GitHub Profile
-
-[![GitHub](https://img.shields.io/badge/GitHub-issu321-181717?style=for-the-badge&logo=github)](https://github.com/issu321)
-
-</div>
-
----
-
-# 🌟 Repository Support
-
-If you like this project:
-
-⭐ Star the repository
-🍴 Fork the project
-📢 Share with friends
-🧠 Learn algorithms visually
-
----
-
-# 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:0f172a,50:06b6d4,100:7c3aed" />
-
-# ⚡ BUILT WITH PASSION BY USSU ⚡
-
-### "Turning Algorithms Into Visual Intelligence"
-
-</div>
-
+**Built with passion by Ussu (issu321)**
