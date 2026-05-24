@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA Theory | USSU Algorithm Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">USSU</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graph.html">Graph</a></li>
+            <li><a href="sort.html">Sorting</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="dp.html">DP</a></li>
+            <li><a href="greedy.html">Greedy</a></li>
+            <li><a href="math.html">Math</a></li>
+            <li><a href="theory.html" class="active">Theory</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <div style="padding-top:100px;">
+        <div class="container">
+            <div class="reveal">
+                <h1 class="section-title">ADA Theory & Analysis</h1>
+                <p class="subtitle">Asymptotic notation, Master Theorem, NP-Completeness, and algorithm design paradigms. The mathematical foundation of efficient computation.</p>
+            </div>
+
+            <!-- Asymptotic Notation -->
+            <div class="glass-strong reveal" style="padding:2rem; margin:2rem 0;">
+                <h2 style="font-family:'Orbitron',sans-serif; color:var(--bright-cyan); margin-bottom:1.5rem; font-size:1.5rem;">📐 Asymptotic Notation</h2>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                        <tr style="background:rgba(30,41,59,0.9); color:var(--bright-cyan);">
+                            <th style="padding:12px; text-align:left; border-bottom:2px solid var(--cyan);">Notation</th>
+                            <th style="padding:12px; text-align:left; border-bottom:2px solid var(--cyan);">Name</th>
+                            <th style="padding:12px; text-align:left; border-bottom:2px solid var(--cyan);">Definition</th>
+                            <th style="padding:12px; text-align:left; border-bottom:2px solid var(--cyan);">Example</th>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--grid);">
+                            <td style="padding:12px; color:var(--green); font-family:'Fira Code',monospace; font-weight:700;">O(f(n))</td>
+                            <td style="padding:12px; color:var(--white);">Big-O (Upper Bound)</td>
+                            <td style="padding:12px; color:var(--gray);">T(n) ≤ c·f(n) for n ≥ n₀</td>
+                            <td style="padding:12px; color:var(--gray); font-family:'Fira Code',monospace;">3n² + 5n = O(n²)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--grid);">
+                            <td style="padding:12px; color:var(--green); font-family:'Fira Code',monospace; font-weight:700;">Ω(f(n))</td>
+                            <td style="padding:12px; color:var(--white);">Big-Omega (Lower Bound)</td>
+                            <td style="padding:12px; color:var(--gray);">T(n) ≥ c·f(n) for n ≥ n₀</td>
+                            <td style="padding:12px; color:var(--gray); font-family:'Fira Code',monospace;">n³ + 2n = Ω(n³)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--grid);">
+                            <td style="padding:12px; color:var(--green); font-family:'Fira Code',monospace; font-weight:700;">Θ(f(n))</td>
+                            <td style="padding:12px; color:var(--white);">Big-Theta (Tight Bound)</td>
+                            <td style="padding:12px; color:var(--gray);">c₁·f(n) ≤ T(n) ≤ c₂·f(n)</td>
+                            <td style="padding:12px; color:var(--gray); font-family:'Fira Code',monospace;">2n² + 3n = Θ(n²)</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--grid);">
+                            <td style="padding:12px; color:var(--yellow); font-family:'Fira Code',monospace; font-weight:700;">o(f(n))</td>
+                            <td style="padding:12px; color:var(--white);">Little-o (Strict Upper)</td>
+                            <td style="padding:12px; color:var(--gray);">lim T(n)/f(n) = 0</td>
+                            <td style="padding:12px; color:var(--gray); font-family:'Fira Code',monospace;">n = o(n²)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px; color:var(--yellow); font-family:'Fira Code',monospace; font-weight:700;">ω(f(n))</td>
+                            <td style="padding:12px; color:var(--white);">Little-omega (Strict Lower)</td>
+                            <td style="padding:12px; color:var(--gray);">lim T(n)/f(n) = ∞</td>
+                            <td style="padding:12px; color:var(--gray); font-family:'Fira Code',monospace;">n² = ω(n)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Master Theorem -->
+            <div class="glass-strong reveal" style="padding:2rem; margin:2rem 0;">
+                <h2 style="font-family:'Orbitron',sans-serif; color:var(--bright-cyan); margin-bottom:1.5rem; font-size:1.5rem;">🎓 Master Theorem</h2>
+                <p style="color:var(--gray); margin-bottom:1.5rem;">For recurrences of the form <span style="color:var(--white); font-family:'Fira Code',monospace;">T(n) = a·T(n/b) + f(n)</span> where a ≥ 1, b > 1:</p>
+
+                <div class="features-grid" style="padding:0; gap:1rem;">
+                    <div class="glass-card" style="border-left-color:var(--green);">
+                        <h3 style="color:var(--green); font-family:'Orbitron',sans-serif; font-size:1rem; margin-bottom:0.5rem;">Case 1</h3>
+                        <p style="color:var(--gray); font-size:0.9rem; font-family:'Fira Code',monospace;">f(n) = O(n^(log_b a - ε))</p>
+                        <p style="color:var(--white); margin-top:0.5rem; font-weight:600;">T(n) = Θ(n^(log_b a))</p>
+                        <p style="color:var(--gray); font-size:0.85rem; margin-top:0.5rem;">Leaf work dominates. Example: Merge Sort T(n)=2T(n/2)+n → Θ(n log n)</p>
+                    </div>
+                    <div class="glass-card" style="border-left-color:var(--yellow);">
+                        <h3 style="color:var(--yellow); font-family:'Orbitron',sans-serif; font-size:1rem; margin-bottom:0.5rem;">Case 2</h3>
+                        <p style="color:var(--gray); font-size:0.9rem; font-family:'Fira Code',monospace;">f(n) = Θ(n^(log_b a))</p>
+                        <p style="color:var(--white); margin-top:0.5rem; font-weight:600;">T(n) = Θ(n^(log_b a) · log n)</p>
+                        <p style="color:var(--gray); font-size:0.85rem; margin-top:0.5rem;">Work balanced across levels. Example: T(n)=2T(n/2)+Θ(n)</p>
+                    </div>
+                    <div class="glass-card" style="border-left-color:var(--red);">
+                        <h3 style="color:var(--red); font-family:'Orbitron',sans-serif; font-size:1rem; margin-bottom:0.5rem;">Case 3</h3>
+                        <p style="color:var(--gray); font-size:0.9rem; font-family:'Fira Code',monospace;">f(n) = Ω(n^(log_b a + ε))</p>
+                        <p style="color:var(--white); margin-top:0.5rem; font-weight:600;">T(n) = Θ(f(n))</p>
+                        <p style="color:var(--gray); font-size:0.85rem; margin-top:0.5rem;">Root work dominates. Example: T(n)=2T(n/2)+n² → Θ(n²)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NP Completeness -->
+            <div class="glass-strong reveal" style="padding:2rem; margin:2rem 0;">
+                <h2 style="font-family:'Orbitron',sans-serif; color:var(--bright-cyan); margin-bottom:1.5rem; font-size:1.5rem;">🔬 Complexity Classes</h2>
+                <div class="features-grid" style="padding:0; gap:1rem;">
+                    <div class="glass-card" style="border-left-color:var(--green);">
+                        <h3 style="color:var(--green); font-family:'Orbitron',sans-serif; font-size:1rem;">P</h3>
+                        <p style="color:var(--gray); font-size:0.9rem;">Polynomial time. Solvable in O(n^k) for some constant k. The "easy" problems.</p>
+                        <p style="color:var(--cyan); font-size:0.85rem; margin-top:0.5rem; font-family:'Fira Code',monospace;">Sorting, Shortest Path, MST, GCD</p>
+                    </div>
+                    <div class="glass-card" style="border-left-color:var(--cyan);">
+                        <h3 style="color:var(--cyan); font-family:'Orbitron',sans-serif; font-size:1rem;">NP</h3>
+                        <p style="color:var(--gray); font-size:0.9rem;">Nondeterministic Polynomial. Solutions verifiable in polynomial time. Contains P.</p>
+                        <p style="color:var(--cyan); font-size:0.85rem; margin-top:0.5rem; font-family:'Fira Code',monospace;">Sudoku, Graph Coloring, Subset Sum</p>
+                    </div>
+                    <div class="glass-card" style="border-left-color:var(--yellow);">
+                        <h3 style="color:var(--yellow); font-family:'Orbitron',sans-serif; font-size:1rem;">NP-Complete</h3>
+                        <p style="color:var(--gray); font-size:0.9rem;">Hardest problems in NP. Every NP problem reduces to these in polynomial time.</p>
+                        <p style="color:var(--yellow); font-size:0.85rem; margin-top:0.5rem; font-family:'Fira Code',monospace;">SAT, 3-SAT, Clique, Vertex Cover, TSP</p>
+                    </div>
+                    <div class="glass-card" style="border-left-color:var(--red);">
+                        <h3 style="color:var(--red); font-family:'Orbitron',sans-serif; font-size:1rem;">NP-Hard</h3>
+                        <p style="color:var(--gray); font-size:0.9rem;">At least as hard as NP-Complete. May not be in NP. Includes optimization variants.</p>
+                        <p style="color:var(--red); font-size:0.85rem; margin-top:0.5rem; font-family:'Fira Code',monospace;">Halting Problem, Chess, TSP Optimization</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paradigms -->
+            <div class="glass-strong reveal" style="padding:2rem; margin:2rem 0;">
+                <h2 style="font-family:'Orbitron',sans-serif; color:var(--bright-cyan); margin-bottom:1.5rem; font-size:1.5rem;">🧠 Design Paradigms</h2>
+                <div class="features-grid" style="padding:0; gap:1.5rem;">
+                    <div class="glass-card reveal">
+                        <div class="feature-icon" style="background:rgba(6,182,212,0.2); color:var(--cyan);">🔀</div>
+                        <h3 class="feature-title">Divide and Conquer</h3>
+                        <p class="feature-desc">Break problem into smaller subproblems, solve recursively, combine results. Merge Sort, Quick Sort, Binary Search, Strassen's Matrix Multiplication.</p>
+                        <div style="margin-top:1rem;">
+                            <span class="badge badge-cyan">T(n) = aT(n/b) + f(n)</span>
+                            <span class="badge badge-green">Master Theorem</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="feature-icon" style="background:rgba(16,185,129,0.2); color:var(--green);">🧩</div>
+                        <h3 class="feature-title">Dynamic Programming</h3>
+                        <p class="feature-desc">Optimal substructure + overlapping subproblems. Memoize or tabulate to avoid recomputation. Knapsack, LCS, Edit Distance, Matrix Chain.</p>
+                        <div style="margin-top:1rem;">
+                            <span class="badge badge-green">Memoization</span>
+                            <span class="badge badge-cyan">Tabulation</span>
+                            <span class="badge badge-yellow">Optimal</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="feature-icon" style="background:rgba(245,158,11,0.2); color:var(--yellow);">💎</div>
+                        <h3 class="feature-title">Greedy Method</h3>
+                        <p class="feature-desc">Make locally optimal choice at each step. Works when greedy choice property holds. Activity Selection, Huffman, Fractional Knapsack, Dijkstra.</p>
+                        <div style="margin-top:1rem;">
+                            <span class="badge badge-yellow">Local Optimal</span>
+                            <span class="badge badge-cyan">Fast</span>
+                            <span class="badge badge-red">Not Always Opt</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="feature-icon" style="background:rgba(139,92,246,0.2); color:var(--violet);">🔙</div>
+                        <h3 class="feature-title">Backtracking</h3>
+                        <p class="feature-desc">Build solution incrementally, abandon partial candidates ("backtrack") when they cannot possibly lead to valid solution. N-Queens, Sudoku, Graph Coloring.</p>
+                        <div style="margin-top:1rem;">
+                            <span class="badge badge-violet">State Space</span>
+                            <span class="badge badge-cyan">Pruning</span>
+                            <span class="badge badge-yellow">Exponential</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="feature-icon" style="background:rgba(217,70,239,0.2); color:var(--magenta);">🌿</div>
+                        <h3 class="feature-title">Branch and Bound</h3>
+                        <p class="feature-desc">Systematically enumerate candidate solutions using bounds to prune branches. Optimization version of backtracking. TSP, Job Assignment.</p>
+                        <div style="margin-top:1rem;">
+                            <span class="badge" style="background:rgba(217,70,239,0.15); color:var(--magenta);">Bounds</span>
+                            <span class="badge badge-cyan">Pruning</span>
+                            <span class="badge badge-green">Optimization</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="feature-icon" style="background:rgba(239,68,68,0.2); color:var(--red);">🧬</div>
+                        <h3 class="feature-title">Randomized Algorithms</h3>
+                        <p class="feature-desc">Use randomness as part of the logic. Las Vegas (always correct, random time) vs Monte Carlo (fixed time, probabilistic correctness). QuickSort pivot, Miller-Rabin.</p>
+                        <div style="margin-top:1rem;">
+                            <span class="badge badge-red">Las Vegas</span>
+                            <span class="badge badge-yellow">Monte Carlo</span>
+                            <span class="badge badge-cyan">Expected Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>USSU ALGORITHM ANALYZER v4.0 | Built by <a href="https://github.com/issu321" target="_blank">Ussu</a></p>
+    </footer>
+    <script src="js/engine.js"></script>
+</body>
+</html>

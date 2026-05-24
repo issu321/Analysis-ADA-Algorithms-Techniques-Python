@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Tools | USSU Algorithm Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">USSU</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graph.html">Graph</a></li>
+            <li><a href="sort.html">Sorting</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="dp.html">DP</a></li>
+            <li><a href="greedy.html">Greedy</a></li>
+            <li><a href="math.html" class="active">Math</a></li>
+            <li><a href="theory.html">Theory</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <div style="padding-top:100px;">
+        <div class="container">
+            <div class="reveal">
+                <h1 class="section-title">Mathematical Tools</h1>
+                <p class="subtitle">Number theory, matrix operations, and sequence generators. All calculations run live in your browser with step-by-step breakdowns.</p>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="features-grid" style="padding:2rem 0 4rem;">
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(6,182,212,0.2); color:var(--cyan);">🔢</div>
+                    <h3 class="feature-title">Sieve of Eratosthenes</h3>
+                    <p class="feature-desc">Generate all primes up to N in O(n log log n) time. The classic algorithm for prime number generation.</p>
+                    <div style="margin-top:1rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="number" id="sieve-n" value="100" style="width:80px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <button class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;" onclick="runSieve()">▶ Run</button>
+                    </div>
+                    <div id="sieve-result" style="margin-top:1rem; font-family:'Fira Code',monospace; font-size:0.85rem; color:var(--gray); max-height:120px; overflow-y:auto;"></div>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(139,92,246,0.2); color:var(--violet);">🌀</div>
+                    <h3 class="feature-title">Fibonacci Sequence</h3>
+                    <p class="feature-desc">Generate Fibonacci numbers with iterative, recursive, and memoization methods. Compare performance characteristics.</p>
+                    <div style="margin-top:1rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="number" id="fib-n" value="20" style="width:80px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <button class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;" onclick="runFib()">▶ Calculate</button>
+                    </div>
+                    <div id="fib-result" style="margin-top:1rem; font-family:'Fira Code',monospace; font-size:0.85rem; color:var(--gray);"></div>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(16,185,129,0.2); color:var(--green);">🔗</div>
+                    <h3 class="feature-title">GCD & LCM</h3>
+                    <p class="feature-desc">Euclidean algorithm for GCD. Extended GCD finds Bézout coefficients. LCM derived from GCD.</p>
+                    <div style="margin-top:1rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="number" id="gcd-a" value="48" style="width:60px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <input type="number" id="gcd-b" value="18" style="width:60px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <button class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;" onclick="runGCD()">▶ GCD</button>
+                    </div>
+                    <div id="gcd-result" style="margin-top:1rem; font-family:'Fira Code',monospace; font-size:0.85rem; color:var(--gray);"></div>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(245,158,11,0.2); color:var(--yellow);">🔐</div>
+                    <h3 class="feature-title">Primality Test</h3>
+                    <p class="feature-desc">Trial division primality test. Check if a number is prime with O(√n) complexity. Handles large integers efficiently.</p>
+                    <div style="margin-top:1rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="number" id="prime-n" value="97" style="width:100px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <button class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;" onclick="runPrime()">▶ Check</button>
+                    </div>
+                    <div id="prime-result" style="margin-top:1rem; font-family:'Fira Code',monospace; font-size:0.85rem; color:var(--gray);"></div>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(217,70,239,0.2); color:var(--magenta);">⚡</div>
+                    <h3 class="feature-title">Fast Exponentiation</h3>
+                    <p class="feature-desc">Binary exponentiation (exponentiation by squaring). Computes a^b in O(log b) time. Critical for modular arithmetic in cryptography.</p>
+                    <div style="margin-top:1rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="number" id="pow-base" value="2" style="width:60px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <span style="color:var(--gray);">^</span>
+                        <input type="number" id="pow-exp" value="10" style="width:60px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <button class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;" onclick="runPow()">▶ Compute</button>
+                    </div>
+                    <div id="pow-result" style="margin-top:1rem; font-family:'Fira Code',monospace; font-size:0.85rem; color:var(--gray);"></div>
+                </div>
+
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(239,68,68,0.2); color:var(--red);">🔁</div>
+                    <h3 class="feature-title">Factorial Calculator</h3>
+                    <p class="feature-desc">Compute n! with iterative method. Handles large numbers with BigInt. Shows step-by-step multiplication chain.</p>
+                    <div style="margin-top:1rem; display:flex; gap:0.5rem; align-items:center;">
+                        <input type="number" id="fact-n" value="10" style="width:80px; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--grid); border-radius:6px; color:var(--white); font-family:'Fira Code',monospace;">
+                        <button class="btn btn-primary" style="padding:0.5rem 1rem; font-size:0.75rem;" onclick="runFact()">▶ Factorial</button>
+                    </div>
+                    <div id="fact-result" style="margin-top:1rem; font-family:'Fira Code',monospace; font-size:0.85rem; color:var(--gray);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>USSU ALGORITHM ANALYZER v4.0 | Built by <a href="https://github.com/issu321" target="_blank">Ussu</a></p>
+    </footer>
+    <script src="js/engine.js"></script>
+    <script>
+        function runSieve() {
+            const n = parseInt(document.getElementById('sieve-n').value);
+            const primes = MathTools.sieve(n);
+            document.getElementById('sieve-result').innerHTML = 
+                `<span style="color:var(--bright-cyan)">Primes ≤ ${n}:</span> ${primes.join(', ')}<br><span style="color:var(--green)">Count: ${primes.length}</span>`;
+        }
+        function runFib() {
+            const n = parseInt(document.getElementById('fib-n').value);
+            const result = MathTools.fibonacci(n);
+            document.getElementById('fib-result').innerHTML = 
+                `<span style="color:var(--bright-cyan)">Fib(${n}) =</span> ${result.toLocaleString()}`;
+        }
+        function runGCD() {
+            const a = parseInt(document.getElementById('gcd-a').value);
+            const b = parseInt(document.getElementById('gcd-b').value);
+            const g = MathTools.gcd(a, b);
+            const lcm = Math.abs(a * b) / g;
+            document.getElementById('gcd-result').innerHTML = 
+                `<span style="color:var(--green)">GCD(${a},${b}) = ${g}</span><br><span style="color:var(--yellow)">LCM = ${lcm}</span>`;
+        }
+        function runPrime() {
+            const n = parseInt(document.getElementById('prime-n').value);
+            const isP = MathTools.isPrime(n);
+            document.getElementById('prime-result').innerHTML = 
+                `<span style="color:${isP ? 'var(--green)' : 'var(--red)'}; font-size:1.2rem; font-weight:700;">${n} is ${isP ? '✅ PRIME' : '❌ NOT PRIME'}</span>`;
+        }
+        function runPow() {
+            const base = parseInt(document.getElementById('pow-base').value);
+            const exp = parseInt(document.getElementById('pow-exp').value);
+            let result = 1n, b = BigInt(base), e = exp;
+            let steps = [];
+            while (e > 0) {
+                if (e & 1) result *= b;
+                b *= b;
+                e >>= 1;
+            }
+            document.getElementById('pow-result').innerHTML = 
+                `<span style="color:var(--bright-cyan)">${base}^${exp} =</span> <span style="color:var(--green)">${result.toLocaleString()}</span>`;
+        }
+        function runFact() {
+            const n = parseInt(document.getElementById('fact-n').value);
+            let result = 1n;
+            for (let i = 2n; i <= BigInt(n); i++) result *= i;
+            document.getElementById('fact-result').innerHTML = 
+                `<span style="color:var(--bright-cyan)">${n}! =</span> <span style="color:var(--green)">${result.toLocaleString()}</span>`;
+        }
+    </script>
+</body>
+</html>

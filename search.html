@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching Algorithms | USSU Algorithm Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">USSU</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graph.html">Graph</a></li>
+            <li><a href="sort.html">Sorting</a></li>
+            <li><a href="search.html" class="active">Search</a></li>
+            <li><a href="dp.html">DP</a></li>
+            <li><a href="greedy.html">Greedy</a></li>
+            <li><a href="math.html">Math</a></li>
+            <li><a href="theory.html">Theory</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <div style="padding-top:100px;">
+        <div class="container">
+            <div class="reveal">
+                <h1 class="section-title">Searching Algorithms</h1>
+                <p class="subtitle">Visualize how different search strategies probe the array. <span style="color:var(--violet)">Purple</span> = Current, <span style="color:var(--yellow)">Yellow</span> = Mid, <span style="color:var(--green)">Green</span> = Found, <span style="color:var(--red)">Red</span> = Not Found.</p>
+            </div>
+
+            <!-- Controls -->
+            <div class="glass-strong reveal" style="padding:1.5rem; margin:2rem 0; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <button class="btn btn-primary" onclick="searchViz.binarySearch()">▶ Binary Search</button>
+                    <button class="btn btn-primary" onclick="searchViz.linearSearch()">▶ Linear Search</button>
+                    <button class="btn btn-glass" onclick="searchViz.generateArray(30)">🎲 New Array</button>
+                </div>
+                <div style="margin-left:auto; color:var(--gray); font-size:0.85rem;">
+                    <span class="badge badge-violet">Current</span>
+                    <span class="badge badge-yellow">Mid</span>
+                    <span class="badge badge-green">Found</span>
+                    <span class="badge badge-red">Not Found</span>
+                </div>
+            </div>
+
+            <!-- Search Canvas -->
+            <div class="glass reveal" style="padding:1rem; margin-bottom:2rem;">
+                <canvas id="search-canvas" style="width:100%; height:200px; border-radius:8px;"></canvas>
+            </div>
+
+            <!-- Algorithm Cards -->
+            <div class="features-grid" style="padding:0 0 4rem;">
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(6,182,212,0.2); color:var(--cyan);">⚡</div>
+                    <h3 class="feature-title">Binary Search</h3>
+                    <p class="feature-desc">Halves search space each iteration. Requires sorted array. The gold standard for searching sorted data. Iterative and recursive variants.</p>
+                    <div style="margin-top:1rem;">
+                        <span class="badge badge-cyan">O(log n)</span>
+                        <span class="badge badge-green">O(1) Space</span>
+                        <span class="badge badge-yellow">Sorted Only</span>
+                    </div>
+                </div>
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(139,92,246,0.2); color:var(--violet);">📏</div>
+                    <h3 class="feature-title">Linear Search</h3>
+                    <p class="feature-desc">Checks each element sequentially. Simple, works on unsorted data. Best for small arrays or when data is unordered.</p>
+                    <div style="margin-top:1rem;">
+                        <span class="badge badge-violet">O(n)</span>
+                        <span class="badge badge-green">O(1) Space</span>
+                        <span class="badge badge-cyan">Unsorted OK</span>
+                    </div>
+                </div>
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(245,158,11,0.2); color:var(--yellow);">🦘</div>
+                    <h3 class="feature-title">Jump Search</h3>
+                    <p class="feature-desc">Jumps ahead by √n steps, then linear searches the block. Between linear and binary in performance. Good for sorted arrays.</p>
+                    <div style="margin-top:1rem;">
+                        <span class="badge badge-yellow">O(√n)</span>
+                        <span class="badge badge-green">O(1) Space</span>
+                        <span class="badge badge-cyan">Block Strategy</span>
+                    </div>
+                </div>
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(16,185,129,0.2); color:var(--green);">🎯</div>
+                    <h3 class="feature-title">Interpolation Search</h3>
+                    <p class="feature-desc">Estimates position using value distribution. Best for uniformly distributed sorted data. Can achieve O(log log n) in ideal cases.</p>
+                    <div style="margin-top:1rem;">
+                        <span class="badge badge-green">O(log log n)</span>
+                        <span class="badge badge-yellow">Uniform Data</span>
+                        <span class="badge badge-cyan">Estimate Pos</span>
+                    </div>
+                </div>
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(217,70,239,0.2); color:var(--magenta);">📈</div>
+                    <h3 class="feature-title">Exponential Search</h3>
+                    <p class="feature-desc">Finds range by repeated doubling (1, 2, 4, 8...), then binary searches within it. Efficient for unbounded/infinite arrays.</p>
+                    <div style="margin-top:1rem;">
+                        <span class="badge" style="background:rgba(217,70,239,0.15); color:var(--magenta);">O(log n)</span>
+                        <span class="badge badge-cyan">Unbounded</span>
+                        <span class="badge badge-yellow">Range Finding</span>
+                    </div>
+                </div>
+                <div class="glass-card reveal">
+                    <div class="feature-icon" style="background:rgba(239,68,68,0.2); color:var(--red);">🔢</div>
+                    <h3 class="feature-title">Ternary Search</h3>
+                    <p class="feature-desc">Divides array into three parts. Useful for finding maximum of unimodal functions. Slightly slower than binary in practice.</p>
+                    <div style="margin-top:1rem;">
+                        <span class="badge badge-red">O(log₃ n)</span>
+                        <span class="badge badge-yellow">Unimodal</span>
+                        <span class="badge badge-cyan">3-Way Split</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>USSU ALGORITHM ANALYZER v4.0 | Built by <a href="https://github.com/issu321" target="_blank">Ussu</a></p>
+    </footer>
+    <script src="js/engine.js"></script>
+</body>
+</html>
